@@ -53,7 +53,7 @@ def build():
         lines.append('      </resource>')
     lines.append('    </resources>')
     lines.append('  </dataset>')
-    lines.append('</p:datasets>')
+    lines.append('</datasets>')
 
     xml = "\n".join(lines)
     OUT_XML.write_text(xml, encoding="utf-8")
