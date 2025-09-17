@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<p:datasets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-             xsi:noNamespaceSchemaLocation="https://www.dane.gov.pl/static/xml/otwarte_dane_latest.xsd">
+<datasets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="https://www.dane.gov.pl/static/xml/otwarte_dane_latest.xsd">
   <dataset status="published">
     <extIdent>mi_sztabowa_zbior</extIdent>
     <title><polish>Apartamenty Sztabowa – ceny ofertowe</polish><english>Sztabowa Apartments – offer prices</english></title>
