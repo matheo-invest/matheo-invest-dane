@@ -19,8 +19,8 @@ def build():
 
     lines = []
     lines.append('<?xml version="1.0" encoding="UTF-8"?>')
-    lines.append('<p:datasets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"')
-    lines.append('             xsi:noNamespaceSchemaLocation="https://www.dane.gov.pl/static/xml/otwarte_dane_latest.xsd">')
+    lines.append('<datasets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"')
+    lines.append('          xsi:noNamespaceSchemaLocation="https://www.dane.gov.pl/static/xml/otwarte_dane_latest.xsd">')
     lines.append('  <dataset status="published">')
     lines.append('    <extIdent>mi_sztabowa_zbior</extIdent>')
     lines.append('    <title><polish>Apartamenty Sztabowa – ceny ofertowe</polish><english>Sztabowa Apartments – offer prices</english></title>')
