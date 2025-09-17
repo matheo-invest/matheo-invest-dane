@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:datasets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:noNamespaceSchemaLocation="https://www.dane.gov.pl/static/xml/otwarte_dane_latest.xsd">
+  <dataset status="published">
+    <extIdent>mi_sztabowa_zbior</extIdent>
+    <title><polish>Apartamenty Sztabowa – ceny ofertowe</polish><english>Sztabowa Apartments – offer prices</english></title>
+    <description><polish>Zbiór zawiera aktualne ceny ofertowe mieszkań w inwestycji Apartamenty Sztabowa od Matheo Invest.</polish>
+                <english>The dataset contains current offer prices of apartments in the Sztabowa investment by Matheo Invest.</english></description>
+    <url>https://matheo-invest.github.io/matheo-invest-dane/</url>
+    <categories>ECON</categories>
+    <tags>Deweloper</tags>
+    <updateFrequency>daily</updateFrequency>
+    <hasDynamicData>false</hasDynamicData>
+    <hasHighValueData>true</hasHighValueData>
+    <hasHighValueDataFromEuropeanCommissionList>false</hasHighValueDataFromEuropeanCommissionList>
+    <hasResearchData>false</hasResearchData>
+    <resources>
+      <resource status="published">
+        <extIdent>mi_sztabowa_20250917</extIdent>
+        <url>https://matheo-invest.github.io/matheo-invest-dane/datasets/sztabowa/2025-09-17.xlsx</url>
+        <title><polish>Ceny ofertowe – 2025-09-17</polish><english>Offer prices – 2025-09-17</english></title>
+        <description><polish>Dane dotyczące cen ofertowych opublikowane 2025-09-17.</polish>
+                    <english>Offer prices published on 2025-09-17.</english></description>
+        <availability>local</availability>
+        <dataDate>2025-09-17</dataDate>
+        <specialSigns><specialSign>X</specialSign></specialSigns>
+        <hasDynamicData>false</hasDynamicData>
+        <hasHighValueData>true</hasHighValueData>
+        <hasHighValueDataFromEuropeanCommissionList>false</hasHighValueDataFromEuropeanCommissionList>
+        <hasResearchData>false</hasResearchData>
+        <containsProtectedData>false</containsProtectedData>
+      </resource>
+    </resources>
+  </dataset>
+</p:datasets>
