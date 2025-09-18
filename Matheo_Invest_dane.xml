@@ -3,9 +3,14 @@
           xsi:noNamespaceSchemaLocation="https://www.dane.gov.pl/static/xml/otwarte_dane_latest.xsd">
   <dataset status="published">
     <extIdent>mi_sztabowa_zbior</extIdent>
-    <title><polish>Apartamenty Sztabowa – ceny ofertowe</polish><english>Sztabowa Apartments – offer prices</english></title>
-    <description><polish>Zbiór zawiera aktualne ceny ofertowe mieszkań w inwestycji Apartamenty Sztabowa od Matheo Invest.</polish>
-                <english>The dataset contains current offer prices of apartments in the Sztabowa investment by Matheo Invest.</english></description>
+    <title>
+      <polish>Apartamenty Sztabowa – ceny ofertowe</polish>
+      <english>Sztabowa Apartments – offer prices</english>
+    </title>
+    <description>
+      <polish>Zbiór zawiera aktualne ceny ofertowe mieszkań w inwestycji Apartamenty Sztabowa od Matheo Invest.</polish>
+      <english>The dataset contains current offer prices of apartments in the Sztabowa investment by Matheo Invest.</english>
+    </description>
     <url>https://matheo-invest.github.io/matheo-invest-dane/</url>
     <categories>ECON</categories>
     <tags>Deweloper</tags>
@@ -15,6 +20,28 @@
     <hasHighValueDataFromEuropeanCommissionList>false</hasHighValueDataFromEuropeanCommissionList>
     <hasResearchData>false</hasResearchData>
     <resources>
+      <resource status="published">
+        <extIdent>mi_sztabowa_ceny</extIdent>
+        <url>https://matheo-invest.github.io/matheo-invest-dane/datasets/sztabowa/ceny.xlsx</url>
+        <title>
+          <polish>Ceny ofertowe – plik XLSX</polish>
+          <english>Offer prices – XLSX file</english>
+        </title>
+        <description>
+          <polish>Aktualne ceny ofertowe mieszkań, publikowane w formacie XLSX.</polish>
+          <english>Current offer prices of apartments, published in XLSX format.</english>
+        </description>
+        <availability>local</availability>
+        <dataDate>2025-09-18</dataDate>
+        <specialSigns>
+          <specialSign>X</specialSign>
+        </specialSigns>
+        <hasDynamicData>false</hasDynamicData>
+        <hasHighValueData>true</hasHighValueData>
+        <hasHighValueDataFromEuropeanCommissionList>false</hasHighValueDataFromEuropeanCommissionList>
+        <hasResearchData>false</hasResearchData>
+        <containsProtectedData>false</containsProtectedData>
+      </resource>
     </resources>
   </dataset>
 </datasets>
