@@ -8,12 +8,13 @@ OUT_MD5 = Path("Matheo_Invest_dane.md5")
 
 def build():
     today = date.today().isoformat()
+
     lines = []
     lines.append('<?xml version="1.0" encoding="UTF-8"?>')
     lines.append('<datasets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"')
     lines.append('          xsi:noNamespaceSchemaLocation="https://www.dane.gov.pl/static/xml/otwarte_dane_latest.xsd">')
 
-    # Dataset 1: Apartamenty Sztabowa
+    # -------- Dataset 1: Apartamenty Sztabowa --------
     lines.append('  <dataset status="published">')
     lines.append('    <extIdent>mi_sztabowa_zbior</extIdent>')
     lines.append('    <title>')
@@ -44,7 +45,7 @@ def build():
     lines.append('          <polish>Aktualne ceny ofertowe mieszkań, publikowane w formacie XLSX.</polish>')
     lines.append('          <english>Current offer prices of apartments, published in XLSX format.</english>')
     lines.append('        </description>')
-    lines.append('        <availability>local</availability>')
+    lines.append('        <availability>remote</availability>')
     lines.append(f'        <dataDate>{today}</dataDate>')
     lines.append('        <specialSigns><specialSign>X</specialSign></specialSigns>')
     lines.append('        <hasDynamicData>false</hasDynamicData>')
@@ -56,7 +57,7 @@ def build():
     lines.append('    </resources>')
     lines.append('  </dataset>')
 
-    # Dataset 2: Klebark Park
+    # -------- Dataset 2: Klebark Park --------
     lines.append('  <dataset status="published">')
     lines.append('    <extIdent>mi_klebark_zbior</extIdent>')
     lines.append('    <title>')
@@ -87,7 +88,7 @@ def build():
     lines.append('          <polish>Aktualne ceny ofertowe mieszkań, publikowane w formacie XLSX.</polish>')
     lines.append('          <english>Current offer prices of apartments, published in XLSX format.</english>')
     lines.append('        </description>')
-    lines.append('        <availability>local</availability>')
+    lines.append('        <availability>remote</availability>')
     lines.append(f'        <dataDate>{today}</dataDate>')
     lines.append('        <specialSigns><specialSign>X</specialSign></specialSigns>')
     lines.append('        <hasDynamicData>false</hasDynamicData>')
@@ -101,9 +102,8 @@ def build():
 
     lines.append('</datasets>')
 
+    # zapis plików
     xml = "\n".join(lines)
-
-    # zapisz pliki
     OUT_XML.write_text(xml, encoding="utf-8")
     OUT_MD5.write_text(hashlib.md5(xml.encode("utf-8")).hexdigest(), encoding="utf-8")
 
