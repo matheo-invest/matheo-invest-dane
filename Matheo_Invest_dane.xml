@@ -31,7 +31,7 @@
           <polish>Aktualne ceny ofertowe mieszkań, publikowane w formacie XLSX.</polish>
           <english>Current offer prices of apartments, published in XLSX format.</english>
         </description>
-        <availability>local</availability>
+        <availability>remote</availability>
         <dataDate>2025-09-18</dataDate>
         <specialSigns><specialSign>X</specialSign></specialSigns>
         <hasDynamicData>false</hasDynamicData>
@@ -72,7 +72,7 @@
           <polish>Aktualne ceny ofertowe mieszkań, publikowane w formacie XLSX.</polish>
           <english>Current offer prices of apartments, published in XLSX format.</english>
         </description>
-        <availability>local</availability>
+        <availability>remote</availability>
         <dataDate>2025-09-18</dataDate>
         <specialSigns><specialSign>X</specialSign></specialSigns>
         <hasDynamicData>false</hasDynamicData>
