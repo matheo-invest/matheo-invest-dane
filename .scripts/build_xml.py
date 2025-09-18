@@ -1,9 +1,10 @@
 from datetime import date
 import hashlib
+from pathlib import Path
 
 BASE_URL = "https://matheo-invest.github.io/matheo-invest-dane"
-OUT_XML = "Matheo_Invest_dane.xml"
-OUT_MD5 = "Matheo_Invest_dane.md5"
+OUT_XML = Path("Matheo_Invest_dane.xml")
+OUT_MD5 = Path("Matheo_Invest_dane.md5")
 
 def build():
     lines = []
@@ -35,12 +36,12 @@ def build():
     lines.append('        <extIdent>mi_sztabowa_ceny</extIdent>')
     lines.append(f'        <url>{BASE_URL}/datasets/sztabowa/ceny.xlsx</url>')
     lines.append('        <title>')
-    lines.append(f'          <polish>Ceny ofertowe – plik XLSX</polish>')
-    lines.append(f'          <english>Offer prices – XLSX file</english>')
+    lines.append('          <polish>Ceny ofertowe – plik XLSX</polish>')
+    lines.append('          <english>Offer prices – XLSX file</english>')
     lines.append('        </title>')
     lines.append('        <description>')
-    lines.append(f'          <polish>Aktualne ceny ofertowe mieszkań, publikowane w formacie XLSX.</polish>')
-    lines.append(f'          <english>Current offer prices of apartments, published in XLSX format.</english>')
+    lines.append('          <polish>Aktualne ceny ofertowe mieszkań, publikowane w formacie XLSX.</polish>')
+    lines.append('          <english>Current offer prices of apartments, published in XLSX format.</english>')
     lines.append('        </description>')
     lines.append('        <availability>local</availability>')
     lines.append(f'        <dataDate>{today}</dataDate>')
@@ -59,6 +60,8 @@ def build():
     lines.append('</datasets>')
 
     xml = "\n".join(lines)
+
+    # zapisz pliki
     OUT_XML.write_text(xml, encoding="utf-8")
     OUT_MD5.write_text(hashlib.md5(xml.encode("utf-8")).hexdigest(), encoding="utf-8")
 
