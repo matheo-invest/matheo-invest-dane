@@ -15,7 +15,7 @@
     <categories>ECON</categories>
     <tags>Deweloper</tags>
     <updateFrequency>daily</updateFrequency>
-    <lastUpdateDate>2025-09-23</lastUpdateDate>
+    <lastUpdateDate>2025-09-24</lastUpdateDate>
     <hasDynamicData>false</hasDynamicData>
     <hasHighValueData>true</hasHighValueData>
     <hasHighValueDataFromEuropeanCommissionList>false</hasHighValueDataFromEuropeanCommissionList>
@@ -33,7 +33,7 @@
           <english>Current offer prices of apartments, published in XLSX format.</english>
         </description>
         <availability>remote</availability>
-        <dataDate>2025-09-23</dataDate>
+        <dataDate>2025-09-24</dataDate>
         <specialSigns><specialSign>X</specialSign></specialSigns>
         <hasDynamicData>false</hasDynamicData>
         <hasHighValueData>true</hasHighValueData>
@@ -57,7 +57,7 @@
     <categories>ECON</categories>
     <tags>Deweloper</tags>
     <updateFrequency>daily</updateFrequency>
-    <lastUpdateDate>2025-09-23</lastUpdateDate>
+    <lastUpdateDate>2025-09-24</lastUpdateDate>
     <hasDynamicData>false</hasDynamicData>
     <hasHighValueData>true</hasHighValueData>
     <hasHighValueDataFromEuropeanCommissionList>false</hasHighValueDataFromEuropeanCommissionList>
@@ -75,7 +75,7 @@
           <english>Current offer prices of apartments, published in XLSX format.</english>
         </description>
         <availability>remote</availability>
-        <dataDate>2025-09-23</dataDate>
+        <dataDate>2025-09-24</dataDate>
         <specialSigns><specialSign>X</specialSign></specialSigns>
         <hasDynamicData>false</hasDynamicData>
         <hasHighValueData>true</hasHighValueData>
