@@ -11,8 +11,9 @@ def build():
 
     lines = []
     lines.append('<?xml version="1.0" encoding="UTF-8"?>')
-    lines.append('<datasets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"')
-    lines.append('          xsi:noNamespaceSchemaLocation="https://www.dane.gov.pl/static/xml/otwarte_dane_latest.xsd">')
+    # UWAGA: wymagany przez dane.gov.pl nagłówek z przestrzenią nazw (ns2)
+    lines.append('<ns2:datasets xmlns:ns2="urn:otwarte-dane:harvester:1.13"')
+    lines.append('              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">')
 
     # -------- Dataset 1: Apartamenty Sztabowa --------
     lines.append('  <dataset status="published">')
@@ -102,9 +103,9 @@ def build():
     lines.append('    </resources>')
     lines.append('  </dataset>')
 
-    lines.append('</datasets>')
+    # DOMKNIĘCIE przestrzeni nazw ns2
+    lines.append('</ns2:datasets>')
 
-    # zapis plików
     xml = "\n".join(lines)
     OUT_XML.write_text(xml, encoding="utf-8")
     OUT_MD5.write_text(hashlib.md5(xml.encode("utf-8")).hexdigest(), encoding="utf-8")
