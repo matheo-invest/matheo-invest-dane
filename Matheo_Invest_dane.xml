@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ns2:datasets xmlns:ns2="urn:otwarte-dane:harvester:1.13"
-              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<ns2:datasets xmlns:ns2="urn:otwarte-dane:harvester:1.13" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:noNamespaceSchemaLocation="https://www.dane.gov.pl/static/xml/otwarte_dane_latest.xsd">
   <dataset status="published">
     <extIdent>mi_sztabowa_zbior</extIdent>
     <title>
@@ -12,7 +12,9 @@
       <english>The dataset contains current offer prices of apartments in the Sztabowa investment by Matheo Invest.</english>
     </description>
     <url>https://matheo-invest.github.io/matheo-invest-dane/</url>
-    <categories>ECON</categories>
+    <categories>
+      <category>ECON</category>
+    </categories>
     <tags>Deweloper</tags>
     <updateFrequency>daily</updateFrequency>
     <lastUpdateDate>2025-10-29</lastUpdateDate>
@@ -54,7 +56,9 @@
       <english>The dataset contains current offer prices of apartments in the Klebark Park investment by Matheo Invest.</english>
     </description>
     <url>https://matheo-invest.github.io/matheo-invest-dane/</url>
-    <categories>ECON</categories>
+    <categories>
+      <category>ECON</category>
+    </categories>
     <tags>Deweloper</tags>
     <updateFrequency>daily</updateFrequency>
     <lastUpdateDate>2025-10-29</lastUpdateDate>
