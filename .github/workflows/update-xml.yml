@@ -22,7 +22,7 @@ jobs:
 
       - name: Update XML and MD5
         run: |
-          python scripts/build_xml.py
+          python .scripts/build_xml.py
 
       - name: Commit and push changes
         run: |
