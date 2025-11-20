@@ -1,42 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ns2:datasets xmlns:ns2="urn:otwarte-dane:harvester:1.13" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-               xsi:noNamespaceSchemaLocation="https://www.dane.gov.pl/static/xml/otwarte_dane_latest.xsd">
+<ns2:datasets xmlns:ns2="urn:otwarte-dane:harvester:1.13"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <dataset status="published">
-    <extIdent>mi_sztabowa_zbior</extIdent>
+    <extIdent>MATHEO_KLEBARK_2025</extIdent>
     <title>
-      <polish>Apartamenty Sztabowa – ceny ofertowe</polish>
-      <english>Sztabowa Apartments – offer prices</english>
+      <polish>Ceny ofertowe mieszkań inwestycji Klebark Park w 2025 r.</polish>
+      <english>Offer prices of apartments in the Klebark Park investment in 2025.</english>
     </title>
     <description>
-      <polish>Zbiór zawiera aktualne ceny ofertowe mieszkań w inwestycji Apartamenty Sztabowa od Matheo Invest.</polish>
-      <english>The dataset contains current offer prices of apartments in the Sztabowa investment by Matheo Invest.</english>
+      <polish>Zbiór danych zawiera informacje o cenach ofertowych mieszkań inwestycji Klebark Park dewelopera Matheo Invest, udostępniane zgodnie z art. 19b ust. 1 ustawy z dnia 20 maja 2021 r. o ochronie praw nabywcy lokalu mieszkalnego lub domu jednorodzinnego oraz Deweloperskim Funduszu Gwarancyjnym (Dz. U. z 2024 r. poz. 695).</polish>
+      <english>The dataset contains information on offer prices of apartments in the Klebark Park investment of the developer Matheo Invest, made available in accordance with art. 19b(1) of the Act of 20 May 2021 on the protection of the rights of the buyer of a residential unit or single-family house and the Developers' Guarantee Fund.</english>
     </description>
-    <url>https://matheo-invest.github.io/matheo-invest-dane/</url>
-    <categories>
-      <category>ECON</category>
-    </categories>
-    <tags>Deweloper</tags>
     <updateFrequency>daily</updateFrequency>
-    <lastUpdateDate>2025-11-20</lastUpdateDate>
     <hasDynamicData>false</hasDynamicData>
     <hasHighValueData>true</hasHighValueData>
     <hasHighValueDataFromEuropeanCommissionList>false</hasHighValueDataFromEuropeanCommissionList>
     <hasResearchData>false</hasResearchData>
+    <categories>
+      <category>ECON</category>
+    </categories>
     <resources>
       <resource status="published">
-        <extIdent>mi_sztabowa_ceny</extIdent>
-        <url>https://matheo-invest.github.io/matheo-invest-dane/datasets/sztabowa/ceny.xlsx</url>
+        <extIdent>MATHEO_KLEBARK_20251120</extIdent>
+        <url>https://matheo-invest.github.io/matheo-invest-dane/datasets/Klebark_Park/ceny.xlsx</url>
         <title>
-          <polish>Ceny ofertowe – plik XLSX</polish>
-          <english>Offer prices – XLSX file</english>
+          <polish>Ceny ofertowe mieszkań inwestycji Klebark Park 2025-11-20</polish>
+          <english>Offer prices for apartments in Klebark Park 2025-11-20</english>
         </title>
         <description>
-          <polish>Aktualne ceny ofertowe mieszkań, publikowane w formacie XLSX.</polish>
-          <english>Current offer prices of apartments, published in XLSX format.</english>
+          <polish>Dane dotyczące cen ofertowych mieszkań inwestycji Klebark Park dewelopera Matheo Invest, udostępnione 2025-11-20 zgodnie z art. 19b ust. 1 ustawy z dnia 20 maja 2021 r. o ochronie praw nabywcy lokalu mieszkalnego lub domu jednorodzinnego oraz Deweloperskim Funduszu Gwarancyjnym (Dz. U. z 2024 r. poz. 695).</polish>
+          <english>Data on offer prices of apartments in the Klebark Park investment of the developer Matheo Invest, made available on 2025-11-20 in accordance with art. 19b(1) of the Act of 20 May 2021 on the protection of the rights of the buyer of a residential unit or single-family house and the Developers' Guarantee Fund.</english>
         </description>
-        <availability>remote</availability>
+        <availability>local</availability>
         <dataDate>2025-11-20</dataDate>
-        <specialSigns><specialSign>X</specialSign></specialSigns>
+        <specialSigns>
+          <specialSign>X</specialSign>
+        </specialSigns>
         <hasDynamicData>false</hasDynamicData>
         <hasHighValueData>true</hasHighValueData>
         <hasHighValueDataFromEuropeanCommissionList>false</hasHighValueDataFromEuropeanCommissionList>
@@ -44,43 +43,46 @@
         <containsProtectedData>false</containsProtectedData>
       </resource>
     </resources>
+    <tags>
+      <tag lang="pl">Deweloper</tag>
+    </tags>
   </dataset>
+
   <dataset status="published">
-    <extIdent>mi_klebark_zbior</extIdent>
+    <extIdent>MATHEO_SZTABOWA_2025</extIdent>
     <title>
-      <polish>Klebark Park – ceny ofertowe</polish>
-      <english>Klebark Park – offer prices</english>
+      <polish>Ceny ofertowe mieszkań inwestycji Apartamenty Sztabowa w 2025 r.</polish>
+      <english>Offer prices of apartments in the Apartamenty Sztabowa investment in 2025.</english>
     </title>
     <description>
-      <polish>Zbiór zawiera aktualne ceny ofertowe mieszkań w inwestycji Klebark Park od Matheo Invest.</polish>
-      <english>The dataset contains current offer prices of apartments in the Klebark Park investment by Matheo Invest.</english>
+      <polish>Zbiór danych zawiera informacje o cenach ofertowych mieszkań inwestycji Apartamenty Sztabowa dewelopera Matheo Invest, udostępniane zgodnie z art. 19b ust. 1 ustawy z dnia 20 maja 2021 r. o ochronie praw nabywcy lokalu mieszkalnego lub domu jednorodzinnego oraz Deweloperskim Funduszu Gwarancyjnym (Dz. U. z 2024 r. poz. 695).</polish>
+      <english>The dataset contains information on offer prices of apartments in the Apartamenty Sztabowa investment of the developer Matheo Invest, made available in accordance with art. 19b(1) of the Act of 20 May 2021 on the protection of the rights of the buyer of a residential unit or single-family house and the Developers' Guarantee Fund.</english>
     </description>
-    <url>https://matheo-invest.github.io/matheo-invest-dane/</url>
-    <categories>
-      <category>ECON</category>
-    </categories>
-    <tags>Deweloper</tags>
     <updateFrequency>daily</updateFrequency>
-    <lastUpdateDate>2025-11-20</lastUpdateDate>
     <hasDynamicData>false</hasDynamicData>
     <hasHighValueData>true</hasHighValueData>
     <hasHighValueDataFromEuropeanCommissionList>false</hasHighValueDataFromEuropeanCommissionList>
     <hasResearchData>false</hasResearchData>
+    <categories>
+      <category>ECON</category>
+    </categories>
     <resources>
       <resource status="published">
-        <extIdent>mi_klebark_ceny</extIdent>
-        <url>https://matheo-invest.github.io/matheo-invest-dane/datasets/klebark/ceny.xlsx</url>
+        <extIdent>MATHEO_SZTABOWA_20251120</extIdent>
+        <url>https://matheo-invest.github.io/matheo-invest-dane/datasets/Apartamenty_Sztabowa/ceny.xlsx</url>
         <title>
-          <polish>Ceny ofertowe – plik XLSX</polish>
-          <english>Offer prices – XLSX file</english>
+          <polish>Ceny ofertowe mieszkań inwestycji Apartamenty Sztabowa 2025-11-20</polish>
+          <english>Offer prices for apartments in Apartamenty Sztabowa 2025-11-20</english>
         </title>
         <description>
-          <polish>Aktualne ceny ofertowe mieszkań, publikowane w formacie XLSX.</polish>
-          <english>Current offer prices of apartments, published in XLSX format.</english>
+          <polish>Dane dotyczące cen ofertowych mieszkań inwestycji Apartamenty Sztabowa dewelopera Matheo Invest, udostępnione 2025-11-20 zgodnie z art. 19b ust. 1 ustawy z dnia 20 maja 2021 r. o ochronie praw nabywcy lokalu mieszkalnego lub domu jednorodzinnego oraz Deweloperskim Funduszu Gwarancyjnym (Dz. U. z 2024 r. poz. 695).</polish>
+          <english>Data on offer prices of apartments in the Apartamenty Sztabowa investment of the developer Matheo Invest, made available on 2025-11-20 in accordance with art. 19b(1) of the Act of 20 May 2021 on the protection of the rights of the buyer of a residential unit or single-family house and the Developers' Guarantee Fund.</english>
         </description>
-        <availability>remote</availability>
+        <availability>local</availability>
         <dataDate>2025-11-20</dataDate>
-        <specialSigns><specialSign>X</specialSign></specialSigns>
+        <specialSigns>
+          <specialSign>X</specialSign>
+        </specialSigns>
         <hasDynamicData>false</hasDynamicData>
         <hasHighValueData>true</hasHighValueData>
         <hasHighValueDataFromEuropeanCommissionList>false</hasHighValueDataFromEuropeanCommissionList>
@@ -88,5 +90,8 @@
         <containsProtectedData>false</containsProtectedData>
       </resource>
     </resources>
+    <tags>
+      <tag lang="pl">Deweloper</tag>
+    </tags>
   </dataset>
 </ns2:datasets>
