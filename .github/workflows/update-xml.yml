@@ -7,6 +7,10 @@ on:
       - "datasets/sztabowa/ceny.xlsx"
   workflow_dispatch:
 
+# 👇 TO JEST KLUCZOWE – pozwalamy workflowowi zapisywać do repo
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -14,6 +18,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
