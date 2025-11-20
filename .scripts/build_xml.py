@@ -9,9 +9,8 @@ ROOT = pathlib.Path(".")
 XML_PATH = ROOT / "Matheo_Invest_dane.xml"
 MD5_PATH = ROOT / "Matheo_Invest_dane.md5"
 
-# Namespace z nagłówka XML
-NS = {"ns2": "urn:otwarte-dane:harvester:1.13"}
-ET.register_namespace("ns2", NS["ns2"])
+# Rejestrujemy namespace, żeby zachować prefix ns2 w nagłówku
+ET.register_namespace("ns2", "urn:otwarte-dane:harvester:1.13")
 
 # Konfiguracja inwestycji: extIdent datasetu -> nazwy
 INVEST_CONFIG = {
@@ -35,10 +34,10 @@ def update_xml_and_md5():
     tree = ET.parse(XML_PATH)
     root = tree.getroot()
 
-    # 2. Przejdź po wszystkich datasetach
-    for dataset in root.findall("ns2:dataset", NS):
-        ds_ext_ident_elem = dataset.find("ns2:extIdent", NS)
-        if ds_ext_ident_elem is None:
+    # 2. Przejdź po wszystkich datasetach (w Twoim XML są BEZ namespace)
+    for dataset in root.findall("dataset"):
+        ds_ext_ident_elem = dataset.find("extIdent")
+        if ds_ext_ident_elem is None or not ds_ext_ident_elem.text:
             continue
 
         ds_ext_ident = ds_ext_ident_elem.text.strip()
@@ -51,28 +50,28 @@ def update_xml_and_md5():
         inv_en = config["en"]
 
         # Szukamy resource w danym datasecie (zakładamy 1 resource na inwestycję)
-        resources = dataset.find("ns2:resources", NS)
+        resources = dataset.find("resources")
         if resources is None:
             continue
 
-        resource = resources.find("ns2:resource", NS)
+        resource = resources.find("resource")
         if resource is None:
             continue
 
         # 2.1. extIdent zasobu z datą
-        res_extident = resource.find("ns2:extIdent", NS)
+        res_extident = resource.find("extIdent")
         if res_extident is None:
             res_extident = ET.SubElement(resource, "extIdent")
         res_extident.text = f"{ds_ext_ident}_{date_compact}"
 
         # 2.2. dataDate = dzisiejsza data
-        data_date = resource.find("ns2:dataDate", NS)
+        data_date = resource.find("dataDate")
         if data_date is None:
             data_date = ET.SubElement(resource, "dataDate")
         data_date.text = date_str
 
         # 2.3. Tytuł zasobu
-        title = resource.find("ns2:title", NS)
+        title = resource.find("title")
         if title is None:
             title = ET.SubElement(resource, "title")
 
@@ -87,7 +86,7 @@ def update_xml_and_md5():
         title_en.text = f"Offer prices for apartments in {inv_en} {date_str}"
 
         # 2.4. Opis zasobu
-        descr = resource.find("ns2:description", NS)
+        descr = resource.find("description")
         if descr is None:
             descr = ET.SubElement(resource, "description")
 
@@ -114,12 +113,12 @@ def update_xml_and_md5():
         )
 
         # 2.5. Upewniamy się, że wymagane pola istnieją
-        availability = resource.find("ns2:availability", NS)
+        availability = resource.find("availability")
         if availability is None:
             availability = ET.SubElement(resource, "availability")
         availability.text = "local"
 
-        specialSigns = resource.find("ns2:specialSigns", NS)
+        specialSigns = resource.find("specialSigns")
         if specialSigns is None:
             specialSigns = ET.SubElement(resource, "specialSigns")
         specialSign = specialSigns.find("specialSign")
@@ -127,18 +126,18 @@ def update_xml_and_md5():
             specialSign = ET.SubElement(specialSigns, "specialSign")
         specialSign.text = "X"
 
-        hasDynamicData = resource.find("ns2:hasDynamicData", NS)
+        hasDynamicData = resource.find("hasDynamicData")
         if hasDynamicData is None:
             hasDynamicData = ET.SubElement(resource, "hasDynamicData")
         hasDynamicData.text = "false"
 
-        hasHighValueData = resource.find("ns2:hasHighValueData", NS)
+        hasHighValueData = resource.find("hasHighValueData")
         if hasHighValueData is None:
             hasHighValueData = ET.SubElement(resource, "hasHighValueData")
         hasHighValueData.text = "true"
 
         hasHighValueFromEC = resource.find(
-            "ns2:hasHighValueDataFromEuropeanCommissionList", NS
+            "hasHighValueDataFromEuropeanCommissionList"
         )
         if hasHighValueFromEC is None:
             hasHighValueFromEC = ET.SubElement(
@@ -146,12 +145,12 @@ def update_xml_and_md5():
             )
         hasHighValueFromEC.text = "false"
 
-        hasResearchData = resource.find("ns2:hasResearchData", NS)
+        hasResearchData = resource.find("hasResearchData")
         if hasResearchData is None:
             hasResearchData = ET.SubElement(resource, "hasResearchData")
         hasResearchData.text = "false"
 
-        containsProtectedData = resource.find("ns2:containsProtectedData", NS)
+        containsProtectedData = resource.find("containsProtectedData")
         if containsProtectedData is None:
             containsProtectedData = ET.SubElement(resource, "containsProtectedData")
         containsProtectedData.text = "false"
