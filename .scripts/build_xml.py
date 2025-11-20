@@ -1,115 +1,171 @@
+#!/usr/bin/env python3
+import datetime
 import hashlib
-from datetime import date
+import pathlib
+import xml.etree.ElementTree as ET
 
-OUT_XML = "Matheo_Invest_dane.xml"
-OUT_MD5 = "Matheo_Invest_dane.md5"
-BASE_URL = "https://matheo-invest.github.io/matheo-invest-dane"
+# Ścieżki plików
+ROOT = pathlib.Path(".")
+XML_PATH = ROOT / "Matheo_Invest_dane.xml"
+MD5_PATH = ROOT / "Matheo_Invest_dane.md5"
 
-today = date.today().strftime("%Y-%m-%d")
+# Namespace z nagłówka XML
+NS = {"ns2": "urn:otwarte-dane:harvester:1.13"}
+ET.register_namespace("ns2", NS["ns2"])
 
-lines = []
-lines.append('<?xml version="1.0" encoding="UTF-8"?>')
-lines.append('<ns2:datasets xmlns:ns2="urn:otwarte-dane:harvester:1.13" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"')
-lines.append('               xsi:noNamespaceSchemaLocation="https://www.dane.gov.pl/static/xml/otwarte_dane_latest.xsd">')
+# Konfiguracja inwestycji: extIdent datasetu -> nazwy
+INVEST_CONFIG = {
+    "MATHEO_INVEST_KLEBARK": {
+        "pl": "Klebark Park",
+        "en": "Klebark Park",
+    },
+    "MATHEO_INVEST_SZTABOWA": {
+        "pl": "Apartamenty Sztabowa",
+        "en": "Apartamenty Sztabowa",
+    },
+}
 
-# --- Apartamenty Sztabowa ---
-lines.append('  <dataset status="published">')
-lines.append('    <extIdent>mi_sztabowa_zbior</extIdent>')
-lines.append('    <title>')
-lines.append('      <polish>Apartamenty Sztabowa – ceny ofertowe</polish>')
-lines.append('      <english>Sztabowa Apartments – offer prices</english>')
-lines.append('    </title>')
-lines.append('    <description>')
-lines.append('      <polish>Zbiór zawiera aktualne ceny ofertowe mieszkań w inwestycji Apartamenty Sztabowa od Matheo Invest.</polish>')
-lines.append('      <english>The dataset contains current offer prices of apartments in the Sztabowa investment by Matheo Invest.</english>')
-lines.append('    </description>')
-lines.append(f'    <url>{BASE_URL}/</url>')
-lines.append('    <categories>')
-lines.append('      <category>ECON</category>')
-lines.append('    </categories>')
-lines.append('    <tags>Deweloper</tags>')
-lines.append('    <updateFrequency>daily</updateFrequency>')
-lines.append(f'    <lastUpdateDate>{today}</lastUpdateDate>')
-lines.append('    <hasDynamicData>false</hasDynamicData>')
-lines.append('    <hasHighValueData>true</hasHighValueData>')
-lines.append('    <hasHighValueDataFromEuropeanCommissionList>false</hasHighValueDataFromEuropeanCommissionList>')
-lines.append('    <hasResearchData>false</hasResearchData>')
-lines.append('    <resources>')
-lines.append('      <resource status="published">')
-lines.append('        <extIdent>mi_sztabowa_ceny</extIdent>')
-lines.append(f'        <url>{BASE_URL}/datasets/sztabowa/ceny.xlsx</url>')
-lines.append('        <title>')
-lines.append('          <polish>Ceny ofertowe – plik XLSX</polish>')
-lines.append('          <english>Offer prices – XLSX file</english>')
-lines.append('        </title>')
-lines.append('        <description>')
-lines.append('          <polish>Aktualne ceny ofertowe mieszkań, publikowane w formacie XLSX.</polish>')
-lines.append('          <english>Current offer prices of apartments, published in XLSX format.</english>')
-lines.append('        </description>')
-lines.append('        <availability>remote</availability>')
-lines.append(f'        <dataDate>{today}</dataDate>')
-lines.append('        <specialSigns><specialSign>X</specialSign></specialSigns>')
-lines.append('        <hasDynamicData>false</hasDynamicData>')
-lines.append('        <hasHighValueData>true</hasHighValueData>')
-lines.append('        <hasHighValueDataFromEuropeanCommissionList>false</hasHighValueDataFromEuropeanCommissionList>')
-lines.append('        <hasResearchData>false</hasResearchData>')
-lines.append('        <containsProtectedData>false</containsProtectedData>')
-lines.append('      </resource>')
-lines.append('    </resources>')
-lines.append('  </dataset>')
 
-# --- Klebark Park ---
-lines.append('  <dataset status="published">')
-lines.append('    <extIdent>mi_klebark_zbior</extIdent>')
-lines.append('    <title>')
-lines.append('      <polish>Klebark Park – ceny ofertowe</polish>')
-lines.append('      <english>Klebark Park – offer prices</english>')
-lines.append('    </title>')
-lines.append('    <description>')
-lines.append('      <polish>Zbiór zawiera aktualne ceny ofertowe mieszkań w inwestycji Klebark Park od Matheo Invest.</polish>')
-lines.append('      <english>The dataset contains current offer prices of apartments in the Klebark Park investment by Matheo Invest.</english>')
-lines.append('    </description>')
-lines.append(f'    <url>{BASE_URL}/</url>')
-lines.append('    <categories>')
-lines.append('      <category>ECON</category>')
-lines.append('    </categories>')
-lines.append('    <tags>Deweloper</tags>')
-lines.append('    <updateFrequency>daily</updateFrequency>')
-lines.append(f'    <lastUpdateDate>{today}</lastUpdateDate>')
-lines.append('    <hasDynamicData>false</hasDynamicData>')
-lines.append('    <hasHighValueData>true</hasHighValueData>')
-lines.append('    <hasHighValueDataFromEuropeanCommissionList>false</hasHighValueDataFromEuropeanCommissionList>')
-lines.append('    <hasResearchData>false</hasResearchData>')
-lines.append('    <resources>')
-lines.append('      <resource status="published">')
-lines.append('        <extIdent>mi_klebark_ceny</extIdent>')
-lines.append(f'        <url>{BASE_URL}/datasets/klebark/ceny.xlsx</url>')
-lines.append('        <title>')
-lines.append('          <polish>Ceny ofertowe – plik XLSX</polish>')
-lines.append('          <english>Offer prices – XLSX file</english>')
-lines.append('        </title>')
-lines.append('        <description>')
-lines.append('          <polish>Aktualne ceny ofertowe mieszkań, publikowane w formacie XLSX.</polish>')
-lines.append('          <english>Current offer prices of apartments, published in XLSX format.</english>')
-lines.append('        </description>')
-lines.append('        <availability>remote</availability>')
-lines.append(f'        <dataDate>{today}</dataDate>')
-lines.append('        <specialSigns><specialSign>X</specialSign></specialSigns>')
-lines.append('        <hasDynamicData>false</hasDynamicData>')
-lines.append('        <hasHighValueData>true</hasHighValueData>')
-lines.append('        <hasHighValueDataFromEuropeanCommissionList>false</hasHighValueDataFromEuropeanCommissionList>')
-lines.append('        <hasResearchData>false</hasResearchData>')
-lines.append('        <containsProtectedData>false</containsProtectedData>')
-lines.append('      </resource>')
-lines.append('    </resources>')
-lines.append('  </dataset>')
+def update_xml_and_md5():
+    today = datetime.date.today()
+    date_str = today.strftime("%Y-%m-%d")   # np. 2025-11-20
+    date_compact = today.strftime("%Y%m%d") # np. 20251120
 
-# --- Zakończenie ---
-lines.append('</ns2:datasets>')
+    # 1. Wczytaj XML
+    tree = ET.parse(XML_PATH)
+    root = tree.getroot()
 
-xml = "\n".join(lines)
-with open(OUT_XML, "w", encoding="utf-8") as f:
-    f.write(xml)
+    # 2. Przejdź po wszystkich datasetach
+    for dataset in root.findall("ns2:dataset", NS):
+        ds_ext_ident_elem = dataset.find("ns2:extIdent", NS)
+        if ds_ext_ident_elem is None:
+            continue
 
-with open(OUT_MD5, "w", encoding="utf-8") as f:
-    f.write(hashlib.md5(xml.encode("utf-8")).hexdigest())
+        ds_ext_ident = ds_ext_ident_elem.text.strip()
+        config = INVEST_CONFIG.get(ds_ext_ident)
+        if not config:
+            # dataset, którego nie mamy w konfiguracji – pomijamy
+            continue
+
+        inv_pl = config["pl"]
+        inv_en = config["en"]
+
+        # Szukamy resource w danym datasecie (zakładamy 1 resource na inwestycję)
+        resources = dataset.find("ns2:resources", NS)
+        if resources is None:
+            continue
+
+        resource = resources.find("ns2:resource", NS)
+        if resource is None:
+            continue
+
+        # 2.1. extIdent zasobu z datą
+        res_extident = resource.find("ns2:extIdent", NS)
+        if res_extident is None:
+            res_extident = ET.SubElement(resource, "extIdent")
+        res_extident.text = f"{ds_ext_ident}_{date_compact}"
+
+        # 2.2. dataDate = dzisiejsza data
+        data_date = resource.find("ns2:dataDate", NS)
+        if data_date is None:
+            data_date = ET.SubElement(resource, "dataDate")
+        data_date.text = date_str
+
+        # 2.3. Tytuł zasobu
+        title = resource.find("ns2:title", NS)
+        if title is None:
+            title = ET.SubElement(resource, "title")
+
+        title_pl = title.find("polish")
+        if title_pl is None:
+            title_pl = ET.SubElement(title, "polish")
+        title_pl.text = f"Ceny ofertowe mieszkań inwestycji {inv_pl} {date_str}"
+
+        title_en = title.find("english")
+        if title_en is None:
+            title_en = ET.SubElement(title, "english")
+        title_en.text = f"Offer prices for apartments in {inv_en} {date_str}"
+
+        # 2.4. Opis zasobu
+        descr = resource.find("ns2:description", NS)
+        if descr is None:
+            descr = ET.SubElement(resource, "description")
+
+        descr_pl = descr.find("polish")
+        if descr_pl is None:
+            descr_pl = ET.SubElement(descr, "polish")
+        descr_pl.text = (
+            f"Dane dotyczące cen ofertowych mieszkań inwestycji {inv_pl} dewelopera "
+            f"Matheo Invest, udostępnione {date_str} zgodnie z art. 19b ust. 1 ustawy "
+            f"z dnia 20 maja 2021 r. o ochronie praw nabywcy lokalu mieszkalnego "
+            f"lub domu jednorodzinnego oraz Deweloperskim Funduszu Gwarancyjnym "
+            f"(Dz. U. z 2024 r. poz. 695)."
+        )
+
+        descr_en = descr.find("english")
+        if descr_en is None:
+            descr_en = ET.SubElement(descr, "english")
+        descr_en.text = (
+            f"Data on offer prices of apartments in the {inv_en} investment of the "
+            f"developer Matheo Invest, made available on {date_str} in accordance "
+            f"with art. 19b(1) of the Act of 20 May 2021 on the protection of the "
+            f"rights of the buyer of a residential unit or single-family house and "
+            f"the Developers' Guarantee Fund."
+        )
+
+        # 2.5. Upewniamy się, że wymagane pola istnieją
+        availability = resource.find("ns2:availability", NS)
+        if availability is None:
+            availability = ET.SubElement(resource, "availability")
+        availability.text = "local"
+
+        specialSigns = resource.find("ns2:specialSigns", NS)
+        if specialSigns is None:
+            specialSigns = ET.SubElement(resource, "specialSigns")
+        specialSign = specialSigns.find("specialSign")
+        if specialSign is None:
+            specialSign = ET.SubElement(specialSigns, "specialSign")
+        specialSign.text = "X"
+
+        hasDynamicData = resource.find("ns2:hasDynamicData", NS)
+        if hasDynamicData is None:
+            hasDynamicData = ET.SubElement(resource, "hasDynamicData")
+        hasDynamicData.text = "false"
+
+        hasHighValueData = resource.find("ns2:hasHighValueData", NS)
+        if hasHighValueData is None:
+            hasHighValueData = ET.SubElement(resource, "hasHighValueData")
+        hasHighValueData.text = "true"
+
+        hasHighValueFromEC = resource.find(
+            "ns2:hasHighValueDataFromEuropeanCommissionList", NS
+        )
+        if hasHighValueFromEC is None:
+            hasHighValueFromEC = ET.SubElement(
+                resource, "hasHighValueDataFromEuropeanCommissionList"
+            )
+        hasHighValueFromEC.text = "false"
+
+        hasResearchData = resource.find("ns2:hasResearchData", NS)
+        if hasResearchData is None:
+            hasResearchData = ET.SubElement(resource, "hasResearchData")
+        hasResearchData.text = "false"
+
+        containsProtectedData = resource.find("ns2:containsProtectedData", NS)
+        if containsProtectedData is None:
+            containsProtectedData = ET.SubElement(resource, "containsProtectedData")
+        containsProtectedData.text = "false"
+
+    # 3. Zapisz zaktualizowany XML
+    tree.write(XML_PATH, encoding="UTF-8", xml_declaration=True)
+
+    # 4. Policz MD5 z zapisanego XML i zapisz do pliku .md5
+    xml_bytes = XML_PATH.read_bytes()
+    md5_hash = hashlib.md5(xml_bytes).hexdigest().upper()
+
+    MD5_PATH.write_text(md5_hash, encoding="utf-8")
+    print(f"Updated XML and MD5: {md5_hash}")
+
+
+if __name__ == "__main__":
+    update_xml_and_md5()
