@@ -1,15 +1,27 @@
 name: Update XML and MD5 for dane.gov.pl
 
 on:
+  # 1) codziennie (GitHub cron jest w UTC)
+  schedule:
+    - cron: "0 4 * * *"
+
+  # 2) gdy zmienisz pliki z cenami
   push:
     paths:
       - "datasets/klebark/ceny.xlsx"
       - "datasets/sztabowa/ceny.xlsx"
+
+  # 3) ręczne uruchomienie z przycisku
   workflow_dispatch:
 
-# 👇 TO JEST KLUCZOWE – pozwalamy workflowowi zapisywać do repo
+# pozwalamy workflowowi robić commit/push do repo
 permissions:
   contents: write
+
+# żeby nie odpaliło się kilka naraz (np. push + schedule)
+concurrency:
+  group: update-xml-and-md5
+  cancel-in-progress: true
 
 jobs:
   build:
@@ -20,6 +32,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          persist-credentials: true
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -37,7 +50,7 @@ jobs:
           git add Matheo_Invest_dane.xml Matheo_Invest_dane.md5
           if git diff --cached --quiet; then
             echo "Brak zmian do zapisania."
-          else
-            git commit -m "Auto update XML and MD5"
-            git push
+            exit 0
           fi
+          git commit -m "Auto update XML and MD5"
+          git push
