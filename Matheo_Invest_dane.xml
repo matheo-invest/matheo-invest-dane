@@ -27,22 +27,22 @@
 
     <resources>
       <resource status="published">
-        <extIdent>MATHEO_INVEST_KLEBARK_20260225</extIdent>
+        <extIdent>MATHEO_INVEST_KLEBARK_20260226</extIdent>
 
         <url>https://matheo-invest.github.io/matheo-invest-dane/datasets/klebark/ceny.xlsx</url>
 
         <title>
-          <polish>Ceny ofertowe mieszkań inwestycji Klebark Park 2026-02-25</polish>
-          <english>Offer prices for apartments in Klebark Park 2026-02-25</english>
+          <polish>Ceny ofertowe mieszkań inwestycji Klebark Park 2026-02-26</polish>
+          <english>Offer prices for apartments in Klebark Park 2026-02-26</english>
         </title>
 
         <description>
-          <polish>Dane dotyczące cen ofertowych mieszkań inwestycji Klebark Park dewelopera Matheo Invest, udostępnione 2026-02-25 zgodnie z art. 19b ust. 1 ustawy z dnia 20 maja 2021 r. o ochronie praw nabywcy lokalu mieszkalnego lub domu jednorodzinnego oraz Deweloperskim Funduszu Gwarancyjnym (Dz. U. z 2024 r. poz. 695).</polish>
-          <english>Data on offer prices of apartments in the Klebark Park investment of the developer Matheo Invest, made available on 2026-02-25 in accordance with art. 19b(1) of the Act of 20 May 2021 on the protection of the rights of the buyer of a residential unit or single-family house and the Developers' Guarantee Fund.</english>
+          <polish>Dane dotyczące cen ofertowych mieszkań inwestycji Klebark Park dewelopera Matheo Invest, udostępnione 2026-02-26 zgodnie z art. 19b ust. 1 ustawy z dnia 20 maja 2021 r. o ochronie praw nabywcy lokalu mieszkalnego lub domu jednorodzinnego oraz Deweloperskim Funduszu Gwarancyjnym (Dz. U. z 2024 r. poz. 695).</polish>
+          <english>Data on offer prices of apartments in the Klebark Park investment of the developer Matheo Invest, made available on 2026-02-26 in accordance with art. 19b(1) of the Act of 20 May 2021 on the protection of the rights of the buyer of a residential unit or single-family house and the Developers' Guarantee Fund.</english>
         </description>
 
         <availability>local</availability>
-        <dataDate>2026-02-25</dataDate>
+        <dataDate>2026-02-26</dataDate>
 
         <specialSigns>
           <specialSign>X</specialSign>
@@ -88,22 +88,22 @@
 
     <resources>
       <resource status="published">
-        <extIdent>MATHEO_INVEST_SZTABOWA_20260225</extIdent>
+        <extIdent>MATHEO_INVEST_SZTABOWA_20260226</extIdent>
 
         <url>https://matheo-invest.github.io/matheo-invest-dane/datasets/sztabowa/ceny.xlsx</url>
 
         <title>
-          <polish>Ceny ofertowe mieszkań inwestycji Apartamenty Sztabowa 2026-02-25</polish>
-          <english>Offer prices for apartments in Apartamenty Sztabowa 2026-02-25</english>
+          <polish>Ceny ofertowe mieszkań inwestycji Apartamenty Sztabowa 2026-02-26</polish>
+          <english>Offer prices for apartments in Apartamenty Sztabowa 2026-02-26</english>
         </title>
 
         <description>
-          <polish>Dane dotyczące cen ofertowych mieszkań inwestycji Apartamenty Sztabowa dewelopera Matheo Invest, udostępnione 2026-02-25 zgodnie z art. 19b ust. 1 ustawy z dnia 20 maja 2021 r. o ochronie praw nabywcy lokalu mieszkalnego lub domu jednorodzinnego oraz Deweloperskim Funduszu Gwarancyjnym (Dz. U. z 2024 r. poz. 695).</polish>
-          <english>Data on offer prices of apartments in the Apartamenty Sztabowa investment of the developer Matheo Invest, made available on 2026-02-25 in accordance with art. 19b(1) of the Act of 20 May 2021 on the protection of the rights of the buyer of a residential unit or single-family house and the Developers' Guarantee Fund.</english>
+          <polish>Dane dotyczące cen ofertowych mieszkań inwestycji Apartamenty Sztabowa dewelopera Matheo Invest, udostępnione 2026-02-26 zgodnie z art. 19b ust. 1 ustawy z dnia 20 maja 2021 r. o ochronie praw nabywcy lokalu mieszkalnego lub domu jednorodzinnego oraz Deweloperskim Funduszu Gwarancyjnym (Dz. U. z 2024 r. poz. 695).</polish>
+          <english>Data on offer prices of apartments in the Apartamenty Sztabowa investment of the developer Matheo Invest, made available on 2026-02-26 in accordance with art. 19b(1) of the Act of 20 May 2021 on the protection of the rights of the buyer of a residential unit or single-family house and the Developers' Guarantee Fund.</english>
         </description>
 
         <availability>local</availability>
-        <dataDate>2026-02-25</dataDate>
+        <dataDate>2026-02-26</dataDate>
 
         <specialSigns>
           <specialSign>X</specialSign>
