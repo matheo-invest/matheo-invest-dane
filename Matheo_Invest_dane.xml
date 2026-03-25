@@ -1,13 +1,13 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<ns0:datasets xmlns:ns0="urn:otwarte-dane:harvester:1.13">
+<?xml version="1.0" encoding="UTF-8"?>
+<ns2:datasets xmlns:ns2="urn:otwarte-dane:harvester:1.13"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 
-  
   <dataset status="published">
     <extIdent>MATHEO_INVEST_KLEBARK</extIdent>
 
     <title>
-      <polish>Ceny ofertowe mieszkań inwestycji Klebark Park w 2025 r.</polish>
-      <english>Offer prices of apartments in the Klebark Park investment in 2025.</english>
+      <polish>Ceny ofertowe mieszkań inwestycji Klebark Park</polish>
+      <english>Offer prices of apartments in the Klebark Park investment</english>
     </title>
 
     <description>
@@ -59,16 +59,14 @@
     <tags>
       <tag lang="pl">Deweloper</tag>
     </tags>
-
   </dataset>
 
-  
   <dataset status="published">
     <extIdent>MATHEO_INVEST_SZTABOWA</extIdent>
 
     <title>
-      <polish>Ceny ofertowe mieszkań inwestycji Apartamenty Sztabowa w 2025 r.</polish>
-      <english>Offer prices of apartments in the Apartamenty Sztabowa investment in 2025.</english>
+      <polish>Ceny ofertowe mieszkań inwestycji Apartamenty Sztabowa</polish>
+      <english>Offer prices of apartments in the Apartamenty Sztabowa investment</english>
     </title>
 
     <description>
@@ -120,7 +118,6 @@
     <tags>
       <tag lang="pl">Deweloper</tag>
     </tags>
-
   </dataset>
 
-</ns0:datasets>
+</ns2:datasets>
