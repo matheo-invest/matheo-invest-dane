@@ -49,3 +49,4 @@ jobs:
           fi
           git commit -m "Auto update XML and MD5"
           git push
+# keep workflow active
