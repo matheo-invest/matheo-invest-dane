@@ -34,7 +34,7 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Update XML and MD5
+      - name: Update XML, archive XLSX and MD5
         run: |
           python .scripts/build_xml.py
 
@@ -42,11 +42,15 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add Matheo_Invest_dane.xml Matheo_Invest_dane.md5
+
+          git add -A Matheo_Invest_dane.xml Matheo_Invest_dane.md5 datasets/klebark datasets/sztabowa
+
           if git diff --cached --quiet; then
             echo "Brak zmian do zapisania."
             exit 0
           fi
-          git commit -m "Auto update XML and MD5"
+
+          git commit -m "Auto update XML, XLSX archive and MD5"
           git push
+
 # keep workflow active
