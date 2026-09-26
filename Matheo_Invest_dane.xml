@@ -20,8 +20,8 @@
     </categories>
     <resources>
       <resource status="published">
-        <extIdent>MATHEO_INVEST_KLEBARK_20260925</extIdent>
-        <url>https://matheo-invest.github.io/matheo-invest-dane/datasets/klebark/archive/ceny_2026-09-25.xlsx</url>
+        <extIdent>MATHEO_INVEST_KLEBARK_20260926</extIdent>
+        <url>https://matheo-invest.github.io/matheo-invest-dane/datasets/klebark/archive/ceny_2026-09-26.xlsx</url>
         <title>
           <polish>Ceny ofertowe mieszkań inwestycji Klebark Park 2026-09-24</polish>
           <english>Offer prices for apartments in Klebark Park 2026-09-24</english>
@@ -31,7 +31,7 @@
           <english>Data on offer prices of apartments in the Klebark Park investment of the developer Matheo Invest, made available on 2026-09-24 in accordance with art. 19b(1) of the Act of 20 May 2021 on the protection of the rights of the buyer of a residential unit or single-family house and the Developers' Guarantee Fund.</english>
         </description>
         <availability>local</availability>
-        <dataDate>2026-09-25</dataDate>
+        <dataDate>2026-09-26</dataDate>
         <specialSigns>
           <specialSign>X</specialSign>
         </specialSigns>
@@ -66,8 +66,8 @@
     </categories>
     <resources>
       <resource status="published">
-        <extIdent>MATHEO_INVEST_SZTABOWA_20260925</extIdent>
-        <url>https://matheo-invest.github.io/matheo-invest-dane/datasets/sztabowa/archive/ceny_2026-09-25.xlsx</url>
+        <extIdent>MATHEO_INVEST_SZTABOWA_20260926</extIdent>
+        <url>https://matheo-invest.github.io/matheo-invest-dane/datasets/sztabowa/archive/ceny_2026-09-26.xlsx</url>
         <title>
           <polish>Ceny ofertowe mieszkań inwestycji Apartamenty Sztabowa 2026-09-24</polish>
           <english>Offer prices for apartments in Apartamenty Sztabowa 2026-09-24</english>
@@ -77,7 +77,7 @@
           <english>Data on offer prices of apartments in the Apartamenty Sztabowa investment of the developer Matheo Invest, made available on 2026-09-24 in accordance with art. 19b(1) of the Act of 20 May 2021 on the protection of the rights of the buyer of a residential unit or single-family house and the Developers' Guarantee Fund.</english>
         </description>
         <availability>local</availability>
-        <dataDate>2026-09-25</dataDate>
+        <dataDate>2026-09-26</dataDate>
         <specialSigns>
           <specialSign>X</specialSign>
         </specialSigns>
