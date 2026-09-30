@@ -64,19 +64,10 @@ def find_child(parent, name):
     return None
 
 
-def find_children(parent, name):
-    """Znajduje wszystkie bezpośrednie dzieci o podanej nazwie."""
-    return [
-        child
-        for child in parent
-        if local_name(child.tag) == name
-    ]
-
-
 def replace_date(text):
     """
-    Zamienia datę YYYY-MM-DD znajdującą się w istniejącym
-    tytule lub opisie na dzisiejszą datę.
+    Zamienia każdą datę YYYY-MM-DD w tekście
+    na dzisiejszą datę.
     """
     if not text:
         return text
@@ -86,6 +77,20 @@ def replace_date(text):
         date_str,
         text
     )
+
+
+def update_dates_in_element(element):
+    """
+    Aktualizuje daty we wszystkich elementach potomnych,
+    np. <polish> i <english> wewnątrz <title>
+    oraz <description>.
+    """
+    if element is None:
+        return
+
+    for child in element.iter():
+        if child.text:
+            child.text = replace_date(child.text)
 
 
 # ---------------------------------------------------------
@@ -140,8 +145,8 @@ for dataset in root:
     archive_filename = f"ceny_{date_str}.xlsx"
     archive_file = archive_dir / archive_filename
 
-    # Jeżeli workflow zostanie uruchomiony ponownie tego samego dnia,
-    # snapshot tego dnia zostanie zaktualizowany najnowszym plikiem.
+    # Ponowne uruchomienie tego samego dnia aktualizuje
+    # snapshot najnowszą wersją pliku ceny.xlsx.
     shutil.copy2(source_file, archive_file)
 
     # -----------------------------------------------------
@@ -178,7 +183,7 @@ for dataset in root:
     )
 
     # -----------------------------------------------------
-    # URL DO NIEZMIENNEGO SNAPSHOTA
+    # URL DO DZIENNEGO SNAPSHOTA
     # -----------------------------------------------------
 
     url = find_child(resource, "url")
@@ -204,18 +209,18 @@ for dataset in root:
     data_date.text = date_str
 
     # -----------------------------------------------------
-    # TYTUŁY ZASOBU
+    # TYTUŁ ZASOBU
     # -----------------------------------------------------
 
-    for title in find_children(resource, "title"):
-        title.text = replace_date(title.text)
+    title = find_child(resource, "title")
+    update_dates_in_element(title)
 
     # -----------------------------------------------------
-    # OPISY ZASOBU
+    # OPIS ZASOBU
     # -----------------------------------------------------
 
-    for description in find_children(resource, "description"):
-        description.text = replace_date(description.text)
+    description = find_child(resource, "description")
+    update_dates_in_element(description)
 
     # -----------------------------------------------------
     # DOSTĘPNOŚĆ
